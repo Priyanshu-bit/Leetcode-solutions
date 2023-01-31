@@ -7,35 +7,29 @@ using namespace std;
 //User function Template for C++
 
 class Solution {
-  public:
-       int minRepeats(string A, string B) {
+public:
+    static int minRepeats(string A, string B) {
         // code here
-        if(A==B)return 1;
-        int i=0,n=A.length(),m=B.length(),ans=1,j=0;
-        while(i<n)
-        {
-            if(A[i]==B[j]){
-                j++;
-            }
-            else{
-                if(A[i]==B[0])j=1;
-                else j=0;
-            }
-            i++;
+        int count =1;
+        string rep =A;
+        while (rep.length()<B.length()){
+            rep +=A;
+            count++;
+            
         }
-        i=0;
-        if(j!=m)ans++;
-        while(j<m and A[i]==B[j]){
-            i++;
-            i%=n;
-            if(i==0)ans++;
-            j++;
-        }
-        if(j!=m)return -1;
-        if(i==0)ans--;
-        return ans;
-    }
-};
+        if (rep.find(B) != string::npos) 
+        return count ;
+        
+        rep +=A;
+        if (rep.find(B) != string::npos) 
+        return count+1;
+        
+        
+        return -1;
+
+    }  							
+
+     };
 
 //{ Driver Code Starts.
 
