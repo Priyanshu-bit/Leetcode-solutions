@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int maxProfit(vector<int> prices) {
+    int maxProfit(vector<int>& prices) {
         int maxpro=0;
         int minPrice =INT_MAX;
         int n  = prices.size();
