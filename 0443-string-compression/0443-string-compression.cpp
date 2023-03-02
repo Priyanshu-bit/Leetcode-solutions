@@ -1,7 +1,7 @@
 class Solution {
 public:
     int compress(vector<char>& chars) {
-        int count =1;
+        
         int j=0;
         if (chars.size()==1)
             return 1;
